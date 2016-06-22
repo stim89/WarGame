@@ -1,0 +1,82 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WarCardGame.ResourceDictionary">
+
+    <Style x:Key="WarMenuButton" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="{StaticResource WarButtonText}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="ButtonBorder"
+                            CornerRadius="20"
+                            BorderThickness="1"
+                            Background="{StaticResource WarButtonBrush}"
+                            BorderBrush="{StaticResource WarButtonBorder}"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="2.2"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" CornerRadius="20,20,0,0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Brown" Offset="0"/>
+                                        <GradientStop Color="Gold" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <ContentPresenter x:Name="ButtonContentPresenter"
+                                              Grid.RowSpan="2"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsEnabled" Value="True"/>
+
+                            </MultiTrigger.Conditions>
+                            <Setter Property="RenderTransform" TargetName="ButtonBorder">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="ButtonBorder" Value="{StaticResource ActiveWarButton}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True"/>
+                                <Condition Property="IsEnabled" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="RenderTransform" TargetName="ButtonBorder">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="ButtonBorder" Value="{StaticResource PressedWarButton}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisableWarButton}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style>
+        
+        
+        
+        
+    </Style>
+</ResourceDictionary>

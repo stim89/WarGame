@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WarCardGame.ResourceDictionary">
+
+
+
+    <SolidColorBrush X:Key="WarButtonText" Color="Red"></SolidColorBrush>
+
+    <SolidColorBrush X:Key="WarButtonBrush" Color="Purple"></SolidColorBrush>
+
+    <SolidColorBrush X:Key="WarButtonBorder" Color="Green"></SolidColorBrush>
+
+    <SolidColorBrush X:Key="ActiveWarButton" Color="Blue"></SolidColorBrush>
+
+    <SolidColorBrush X:Key="PressedWarButton" Color="Yellow"></SolidColorBrush>
+
+    <SolidColorBrush X:Key="DisabledWarButton" Color="Pink"></SolidColorBrush>
+    
+</ResourceDictionary>

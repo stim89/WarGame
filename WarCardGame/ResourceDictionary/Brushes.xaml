@@ -4,16 +4,16 @@
 
 
 
-    <SolidColorBrush X:Key="WarButtonText" Color="Red"></SolidColorBrush>
+    <SolidColorBrush x:Key="WarButtonText" Color="Red"></SolidColorBrush>
 
-    <SolidColorBrush X:Key="WarButtonBrush" Color="Purple"></SolidColorBrush>
+    <SolidColorBrush x:Key="WarButtonBrush" Color="Purple"></SolidColorBrush>
 
-    <SolidColorBrush X:Key="WarButtonBorder" Color="Green"></SolidColorBrush>
+    <SolidColorBrush x:Key="WarButtonBorder" Color="Green"></SolidColorBrush>
 
-    <SolidColorBrush X:Key="ActiveWarButton" Color="Blue"></SolidColorBrush>
+    <SolidColorBrush x:Key="ActiveWarButton" Color="Blue"></SolidColorBrush>
 
-    <SolidColorBrush X:Key="PressedWarButton" Color="Yellow"></SolidColorBrush>
+    <SolidColorBrush x:Key="PressedWarButton" Color="Yellow"></SolidColorBrush>
 
-    <SolidColorBrush X:Key="DisabledWarButton" Color="Pink"></SolidColorBrush>
+    <SolidColorBrush x:Key="DisabledWarButton" Color="Pink"></SolidColorBrush>
     
 </ResourceDictionary>

@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarCardGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="War Game" Height="600" Width="800" Background="SteelBlue" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btn_newGame" Width="150" Height="50" Content="New Game" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_newGame_Click"/>
+            <Button x:Name="btn_rules" Width="150" Height="50" Content="Rules" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_rules_Click"/>
+            <Button x:Name="btn_exit" Width="150" Height="50" Content="Exit Game" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_exit_Click"/>
+            <TextBlock x:Name="txt_info" TextAlignment="Center" FontWeight="Bold" FontFamily="Terminal" Margin="0,5"/>
+        </StackPanel>
     </Grid>
 </Window>

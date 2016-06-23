@@ -13,5 +13,6 @@ namespace WarCardGame
     /// </summary>
     public partial class App : Application
     {
+        //test
     }
 }

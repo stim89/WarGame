@@ -19,6 +19,16 @@ namespace WarCardGame
     /// </summary>
     public partial class GameWindow : Window
     {
+
+        private static Random rand = new Random();
+
+
+        #region
+
+        private static Random random { get{ return random; } }
+
+        #endregion
+
         public GameWindow()
         {
             InitializeComponent();

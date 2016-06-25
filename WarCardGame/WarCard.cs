@@ -117,11 +117,11 @@ namespace WarCardGame
             {
                 if (card == Cards.Blank)
                 {
-                    return Utilities.GetImage(Table_Items_Path + "what ever the blank card name is.png");
+                    return Utilities.GetImage(Table_Items_Path + "Blank.png");
                 }
                 else if (card == Cards.Down)
                 {
-                    return Utilities.GetImage(Cards_Path + "what ever bakc of the card name is.png");
+                    return Utilities.GetImage(Cards_Path + "Down.png");
                 }
                 else
                     return null;

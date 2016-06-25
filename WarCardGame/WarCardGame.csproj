@@ -113,8 +113,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Cards\" />
-    <Folder Include="Images\TableItems\" />
+    <Resource Include="Images\TableItems\Black.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\11Cub.png" />
+    <Resource Include="Images\Cards\11Diamond.png" />
+    <Resource Include="Images\Cards\11Heart.png" />
+    <Resource Include="Images\Cards\11Spade.png" />
+    <Resource Include="Images\Cards\12Cub.png" />
+    <Resource Include="Images\Cards\12Diamond.png" />
+    <Resource Include="Images\Cards\12Heart.png" />
+    <Resource Include="Images\Cards\12Spade.png" />
+    <Resource Include="Images\Cards\13Cub.png" />
+    <Resource Include="Images\Cards\13Diamond.png" />
+    <Resource Include="Images\Cards\13Heart.png" />
+    <Resource Include="Images\Cards\13Spade.png" />
+    <Resource Include="Images\Cards\14Cub.png" />
+    <Resource Include="Images\Cards\14Diamond.png" />
+    <Resource Include="Images\Cards\14Heart.png" />
+    <Resource Include="Images\Cards\14Spade.png" />
+    <Resource Include="Images\Cards\15Joker.png" />
+    <Resource Include="Images\Cards\16Joker.png" />
+    <Resource Include="Images\Cards\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TableItems\gameBackGround.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

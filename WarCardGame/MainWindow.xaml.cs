@@ -51,7 +51,9 @@ namespace WarCardGame
         #region event handling
         private void btn_newGame_Click(object sender, RoutedEventArgs e)
         {
-
+            var GameWindow = new GameWindow();
+            GameWindow.Show();
+            this.Close();
         }
 
         private void btn_rules_Click(object sender, RoutedEventArgs e)
@@ -61,7 +63,7 @@ namespace WarCardGame
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         void MainMenu_MouseLeave(object sender, MouseEventArgs e)

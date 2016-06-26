@@ -1,0 +1,38 @@
+﻿<Window x:Class="WarCardGame.gameTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarCardGame"
+        mc:Ignorable="d"
+        Height="600" Width="800" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\gameBackGround.png"/>
+
+    </Window.Background>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" Width="auto">
+            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Center" Width="auto">
+            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,150,0,0" HorizontalAlignment="Center" Width="auto">
+            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,150" HorizontalAlignment="Center" Width="auto">
+            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+        </StackPanel>
+        
+    </Grid>
+
+</Window>

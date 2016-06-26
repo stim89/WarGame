@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -20,18 +21,52 @@ namespace WarCardGame
     public partial class GameWindow : Window
     {
 
-        private static Random rand = new Random();
+        
+
+        #region Methods
+
+        //private static void Move(this Image shuffleCard2, double newX, double newY)
+        //{
+        //    var top = Canvas.GetTop(shuffleCard2);
+        //    var left = Canvas.GetLeft(shuffleCard2);
+        //    TranslateTransform trans = new TranslateTransform();
+        //    shuffleCard2.RenderTransform = trans;
+        //    DoubleAnimation anim1 = new DoubleAnimation(top, newY - top, TimeSpan.FromSeconds(10));
+        //    DoubleAnimation anim2 = new DoubleAnimation(top, newX - top, TimeSpan.FromSeconds(10));
+        //    trans.BeginAnimation(TranslateTransform.XProperty, anim1);
+        //    trans.BeginAnimation(TranslateTransform.YProperty, anim2);
 
 
-        #region
+        //}
 
-        private static Random random { get{ return random; } }
+
 
         #endregion
 
         public GameWindow()
         {
             InitializeComponent();
+        }
+
+        private void Shuffle_Click(object sender, RoutedEventArgs e)
+        {
+
+            //trying to suffle the cards!!!!!!!!!!
+            Canvas.SetLeft(shuffleCard, 1);
+            Canvas.SetTop(shuffleCard, 1);
+
+
+            var gameTable = new gameTable();
+            gameTable.Show();
+            this.Close();
+
+
+            //shuffle
+            //shuffleCard2.Margin = new Thickness(shuffleCard2.Margin.Right + 100);
+            //shuffleCard.Width = 1000;
+
+            //close out of everything
+
         }
     }
 }

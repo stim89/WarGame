@@ -55,11 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="gameTable.xaml.cs">
+      <DependentUpon>gameTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="WarCard.cs" />
+    <Page Include="gameTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,9 +120,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\TableItems\Black.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Cards\11Cub.png" />
     <Resource Include="Images\Cards\11Diamond.png" />
     <Resource Include="Images\Cards\11Heart.png" />
@@ -138,6 +142,47 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\TableItems\gameBackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\10Cub.png" />
+    <Resource Include="Images\Cards\10Diamond.png" />
+    <Resource Include="Images\Cards\10Heart.png" />
+    <Resource Include="Images\Cards\10Spade.png" />
+    <Resource Include="Images\Cards\2Cub.png" />
+    <Resource Include="Images\Cards\2Diamond.png" />
+    <Resource Include="Images\Cards\2Heart.png" />
+    <Resource Include="Images\Cards\2Spade.png" />
+    <Resource Include="Images\Cards\3Cub.png" />
+    <Resource Include="Images\Cards\3Diamond.png" />
+    <Resource Include="Images\Cards\3Heart.png" />
+    <Resource Include="Images\Cards\3Spade.png" />
+    <Resource Include="Images\Cards\4Cub.png" />
+    <Resource Include="Images\Cards\4Diamond.png" />
+    <Resource Include="Images\Cards\4Heart.png" />
+    <Resource Include="Images\Cards\4Spade.png" />
+    <Resource Include="Images\Cards\5Cub.png" />
+    <Resource Include="Images\Cards\5Diamond.png" />
+    <Resource Include="Images\Cards\5Heart.png" />
+    <Resource Include="Images\Cards\5Spade.png" />
+    <Resource Include="Images\Cards\6Cub.png" />
+    <Resource Include="Images\Cards\6Diamond.png" />
+    <Resource Include="Images\Cards\6Heart.png" />
+    <Resource Include="Images\Cards\6Spade.png" />
+    <Resource Include="Images\Cards\7Cub.png" />
+    <Resource Include="Images\Cards\7Diamond.png" />
+    <Resource Include="Images\Cards\7Heart.png" />
+    <Resource Include="Images\Cards\7Spade.png" />
+    <Resource Include="Images\Cards\8Cub.png" />
+    <Resource Include="Images\Cards\8Diamond.png" />
+    <Resource Include="Images\Cards\8Heart.png" />
+    <Resource Include="Images\Cards\8Spade.png" />
+    <Resource Include="Images\Cards\9Cub.png" />
+    <Resource Include="Images\Cards\9Diamond.png" />
+    <Resource Include="Images\Cards\9Heart.png" />
+    <Resource Include="Images\Cards\9Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TableItems\Blank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

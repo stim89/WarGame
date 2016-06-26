@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarCardGame"
         mc:Ignorable="d"
-        Title="War Game" Height="600" Width="800" Background="SteelBlue" ResizeMode="NoResize">
+        Title="War Game" Height="600" Width="800" ResizeMode="CanResize">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\gameBackGround.png"/>
+
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

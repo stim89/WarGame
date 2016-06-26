@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="WarCard.cs" />
+    <Compile Include="warLogic.cs" />
     <Page Include="gameTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -19,7 +19,7 @@ namespace WarCardGame
 
         #region ENUM
 
-        public enum Suits { None = -1, Spade = 0, Cub = 1, Hearts = 2, Diamond = 3}
+        public enum Suits { None = -1, Spade = 0, Cub = 1, Heart = 2, Diamond = 3}
 
         public enum Cards
         {
@@ -128,7 +128,7 @@ namespace WarCardGame
             }
             else
             {
-                return Utilities.GetImage(Cards_Path + "most of the name for the card" + (int)card + suit.ToString() + ".png");
+                return Utilities.GetImage(Cards_Path + (int)card + suit.ToString() + ".png");
             }
 
         }

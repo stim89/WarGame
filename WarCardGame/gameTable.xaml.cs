@@ -26,11 +26,6 @@ namespace WarCardGame
         private static Random random { get { return random; } }
 
 
-        //tesrsdfsdfdf
-
-
-
-
         public gameTable()
         {
             InitializeComponent();

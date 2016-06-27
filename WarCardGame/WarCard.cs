@@ -136,5 +136,112 @@ namespace WarCardGame
         #endregion
 
 
+
+
+
+        #region game logic and setup
+
+
+        #region setup
+       // bool playAgain;
+
+        public struct Stats
+        {
+            public int Player1Wins;
+            public int ComputerWins;
+            public int Player1Loss;
+            public int ComputerLoss;
+            public int TiesWon;
+            public int GamesPlayed;
+        }
+
+
+
+        
+
+        //public class Deck
+        //{
+        //    private Card[] deck;
+        //    private int currentCard;
+        //    private const int number_Of_Cards = 52;
+        //    private Random rand;
+
+        //    public Deck(Suits suit, Cards card)
+        //    {
+
+        //        deck = new Card[number_Of_Cards];
+        //        currentCard = 0;
+        //        rand = new Random();
+
+        //        for(int count = 0; count < deck.Length; count ++)
+        //            deck[count] = new Card()
+
+        //    }
+
+        //    public void Shuffle()
+        //    {
+        //        currentCard = 0;
+        //        for(int first = 0; first < deck.Length; first++)
+        //        {
+        //            int second = rand.Next(number_Of_Cards);
+        //            Card temp = deck[first];
+        //            deck[first] = deck[second];
+        //            deck[second] = temp;
+        //        }
+        //    }
+
+        //    public Card DealCard()
+        //    {
+        //        if (currentCard < deck.Length)
+        //            return deck[currentCard++];
+        //        else
+        //        {
+        //            return null;
+        //        }
+        //    }
+
+
+
+
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
     }
 }

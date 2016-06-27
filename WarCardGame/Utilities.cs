@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-
+//this is how to get your card images
 namespace WarCardGame
 {
     static class Utilities

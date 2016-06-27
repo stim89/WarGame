@@ -58,17 +58,16 @@
     <Compile Include="gameTable.xaml.cs">
       <DependentUpon>gameTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameWindow.xaml.cs">
-      <DependentUpon>GameWindow.xaml</DependentUpon>
+    <Compile Include="Shufflepage.xaml.cs">
+      <DependentUpon>Shufflepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="WarCard.cs" />
-    <Compile Include="warLogic.cs" />
     <Page Include="gameTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow.xaml">
+    <Page Include="Shufflepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

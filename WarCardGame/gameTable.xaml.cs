@@ -30,5 +30,10 @@ namespace WarCardGame
         {
             InitializeComponent();
         }
+
+        private void btn_newGame_Click(object sender, RoutedEventArgs e)
+        {
+            //next card
+        }
     }
 }

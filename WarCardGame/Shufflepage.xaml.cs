@@ -51,7 +51,7 @@ namespace WarCardGame
         private void Shuffle_Click(object sender, RoutedEventArgs e)
         {
 
-            //trying to suffle the cards!!!!!!!!!!
+            //trying to just move the image back and forth
             Canvas.SetLeft(shuffleCard, 1);
             Canvas.SetTop(shuffleCard, 1);
 

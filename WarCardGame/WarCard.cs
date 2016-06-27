@@ -137,7 +137,14 @@ namespace WarCardGame
 
 
 
-
+        //now need to make 
+        //computer player and human
+        //deck
+        //rand
+        //deal
+        //game logic
+        //keep score
+        //play again?
 
         #region game logic and setup
 

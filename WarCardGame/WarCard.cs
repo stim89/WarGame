@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -100,7 +101,7 @@ namespace WarCardGame
             Id = Guid.NewGuid();
             CardSuit = suit;
             Card = card;
-            CardImage = GetCardImagePath(suit, card);
+            CardImage = GetCardImage(suit, card);
 
         }
 
@@ -110,7 +111,7 @@ namespace WarCardGame
 
         #region method
 
-        private BitmapImage GetCardImagePath(Suits suit, Cards card)
+        public BitmapImage GetCardImage(Suits suit, Cards card)
         {
 
             if (suit == Suits.None)
@@ -138,10 +139,10 @@ namespace WarCardGame
 
 
         //now need to make 
-        //computer player and human
         //deck
         //rand
         //deal
+        //make a index of each players hands
         //game logic
         //keep score
         //play again?
@@ -150,7 +151,7 @@ namespace WarCardGame
 
 
         #region setup
-       // bool playAgain;
+        bool playAgain;
 
         public struct Stats
         {
@@ -164,70 +165,103 @@ namespace WarCardGame
 
 
 
+        //my best attept on my own
+
+        public class Deck
+        {
+            private List<WarCard> deck;
+            private int currentCard = 0;
+            private Random rand;
+            
+            public Deck()
+            {
+                deck = new List<WarCard>();
+                currentCard = 0;
+
+                for (int suit = 0; suit <= 3; suit++)
+                {
+                    for (int rank = 2; rank <= 14; rank++)
+                    {
+                        deck.Add(new WarCard((Suits)suit, (Cards)rank));
+                    }
+                }
+            }
+
+            public WarCard this[int i] { get { return deck[i]; } }
+
+            public int Count { get { return deck.Count; } }
+
+            public void Shuffle()
+            {
+                rand = new Random(Guid.NewGuid().GetHashCode());
+
+                var dupedDeck = new List<WarCard>();
+                dupedDeck.AddRange(deck);
+
+                var count = deck.Count;
+                deck = new List<WarCard>();
+                while (deck.Count != count)
+                {
+                    var cardIndex = rand.Next(0, count - deck.Count);
+                    deck.Add(dupedDeck[cardIndex]);
+                    dupedDeck.RemoveAt(cardIndex);
+                }
+            }
+
+            public WarCard DealCard()
+            {
+                if (currentCard < deck.Count)
+                    return deck[currentCard++];
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public class Game
+        {
+            private Deck deck;
+            private int numberOfPlayers;
+
+            private List<WarCard>[] hands;
+
+            public Game(int numberOfPlayers)
+            {
+                this.numberOfPlayers = numberOfPlayers;
+                deck = new Deck();
+                deck.Shuffle();
+                hands = new List<WarCard>[numberOfPlayers];
+
+                var cardsPerPlayer = deck.Count / numberOfPlayers;
+
+                for (int player = 0; player < numberOfPlayers; player++)
+                {
+                    hands[player] = new List<WarCard>();
+                    for (int card = player * cardsPerPlayer; card < (player + 1) * cardsPerPlayer; card++)
+                    {
+                        hands[player].Add(deck[card]);
+                    }
+                }
+
+
+
+            }
+
+            public List<WarCard> GetPlayerHand(int player)
+            {
+                return hands[player];
+            }
+
+
+            //write players remove card and add card list
+
+
+
+        }
         
 
-        //public class Deck
-        //{
-        //    private Card[] deck;
-        //    private int currentCard;
-        //    private const int number_Of_Cards = 52;
-        //    private Random rand;
-
-        //    public Deck(Suits suit, Cards card)
-        //    {
-
-        //        deck = new Card[number_Of_Cards];
-        //        currentCard = 0;
-        //        rand = new Random();
-
-        //        for(int count = 0; count < deck.Length; count ++)
-        //            deck[count] = new Card()
-
-        //    }
-
-        //    public void Shuffle()
-        //    {
-        //        currentCard = 0;
-        //        for(int first = 0; first < deck.Length; first++)
-        //        {
-        //            int second = rand.Next(number_Of_Cards);
-        //            Card temp = deck[first];
-        //            deck[first] = deck[second];
-        //            deck[second] = temp;
-        //        }
-        //    }
-
-        //    public Card DealCard()
-        //    {
-        //        if (currentCard < deck.Length)
-        //            return deck[currentCard++];
-        //        else
-        //        {
-        //            return null;
-        //        }
-        //    }
-
-
-
-
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 

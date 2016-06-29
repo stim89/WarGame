@@ -26,17 +26,17 @@
                 Content="Next Card" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_newGame_Click" Margin="0,0,0,50"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" Width="auto">
-            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+            <Image x:Name="Test4" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Center" Width="auto">
-            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+            <Image x:Name="Test1" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
         </StackPanel>
         
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,150,0,0" HorizontalAlignment="Center" Width="auto">
-            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+            <Image x:Name="Test3" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,150" HorizontalAlignment="Center" Width="auto">
-            <Image Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
+            <Image x:Name="Test2" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
         </StackPanel>
 
         <Label x:Name="lbl_ComputerCardCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,0,0,0"

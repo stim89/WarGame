@@ -25,15 +25,35 @@ namespace WarCardGame
 
         private static Random random { get { return random; } }
 
+        private int currentCard = 0;
+
+        private WarCard.Game game;
+
 
         public gameTable()
         {
             InitializeComponent();
+            game = new WarCard.Game(4);
         }
 
         private void btn_newGame_Click(object sender, RoutedEventArgs e)
         {
-            //next card
+            Test1.Source = game.GetPlayerHand(0)[currentCard].CardImage;
+            Test2.Source = game.GetPlayerHand(1)[currentCard].CardImage;
+            Test3.Source = game.GetPlayerHand(2)[currentCard].CardImage;
+            Test4.Source = game.GetPlayerHand(3)[currentCard].CardImage;
+
+
+            // u will have to get rid of this later
+            currentCard++;
+
+            // Reset deck if index is above # of cards per player
+            if (currentCard >= 52 / 4)
+                game = new WarCard.Game(4);
+
+
+            //var card = new WarCard(WarCard.Suits.Diamond, WarCard.Cards.C10);
+            //TestImage.Source = card.CardImage;
         }
     }
 }

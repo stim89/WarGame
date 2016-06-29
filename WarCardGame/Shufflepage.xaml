@@ -6,6 +6,17 @@
         xmlns:local="clr-namespace:WarCardGame"
         mc:Ignorable="d"
         Height="600" Width="800" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowStyle="None">
+    <Window.Resources>
+        <Storyboard x:Key="ShuffleStoryboard" RepeatBehavior="2x">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="shuffleCard" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                <EasingThicknessKeyFrame KeyTime="0" Value="25"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="-50,25,25,25"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="25"/>
+                <!--<EasingThicknessKeyFrame KeyTime="0:0:1.5" Value="-50,25,25,25"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="25"/>-->
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\gameBackGround.png"/>
 
@@ -16,11 +27,11 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
          </Grid.ColumnDefinitions>
-        <Image x:Name="shuffleCard" Grid.Column="0" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\Cards\Back.png" Margin="25"/>
-        <Image x:Name="shuffleCard2" Grid.Column="0" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\Cards\Back.png" Margin="25"/>
+        <Image x:Name="shuffleCard" Grid.Column="0" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\Cards\Back.png" Margin="25" Height="160" Width="108"/>
+        <Image x:Name="shuffleCard2" Grid.Column="0" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\Cards\Back.png" Margin="25" Height="160" Width="108"/>
         <Label x:Name="lbl_info" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Content="Who Will Sit On The Iron Thrown?" Foreground="Gold" FontFamily="Old English Text MT" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="btn_Shuffle" Content="Suffle" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="Shuffle_Click"/>
+               Content="Who Will Sit On The Iron Throne?" Foreground="Gold" FontFamily="Old English Text MT" FontSize="30" FontWeight="Bold"/>
+        <Button x:Name="btn_Shuffle" Content="Shuffle" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="Shuffle_Click"/>
 
 
     </Grid>

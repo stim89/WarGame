@@ -50,23 +50,20 @@ namespace WarCardGame
 
         private void Shuffle_Click(object sender, RoutedEventArgs e)
         {
+            var storyboard = (Storyboard)TryFindResource("ShuffleStoryboard");
+            if (storyboard != null)
+            {
+                storyboard.Completed += Storyboard_Completed;
+                storyboard.Begin();
+            }
+            
+        }
 
-            //trying to just move the image back and forth
-            Canvas.SetLeft(shuffleCard, 1);
-            Canvas.SetTop(shuffleCard, 1);
-
-
+        private void Storyboard_Completed(object sender, EventArgs e)
+        {
             var gameTable = new gameTable();
             gameTable.Show();
             this.Close();
-
-
-            //shuffle
-            //shuffleCard2.Margin = new Thickness(shuffleCard2.Margin.Right + 100);
-            //shuffleCard.Width = 1000;
-
-            //close out of everything
-
         }
     }
 }

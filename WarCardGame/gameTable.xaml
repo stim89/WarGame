@@ -23,7 +23,7 @@
         <Label x:Name="lbl_DisplayyourScore" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50"
               Content="djdjdj"   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
         <Button x:Name="btn_nextCard" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="50" 
-                Content="Next Card" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_newGame_Click" Margin="0,0,0,50"/>
+                Content="Next Card" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_NextCard_Click" Margin="0,0,0,50"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" Width="auto">
             <Image x:Name="Test4" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>

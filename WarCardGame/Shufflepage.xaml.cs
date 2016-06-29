@@ -48,8 +48,14 @@ namespace WarCardGame
             InitializeComponent();
         }
 
+        
+
         private void Shuffle_Click(object sender, RoutedEventArgs e)
         {
+            // arbitrary number - pull number of players input here
+            App.WarGame = new Game(4);
+
+            
             var storyboard = (Storyboard)TryFindResource("ShuffleStoryboard");
             if (storyboard != null)
             {
@@ -64,6 +70,16 @@ namespace WarCardGame
             var gameTable = new gameTable();
             gameTable.Show();
             this.Close();
+        }
+
+        private void rbtn_HowManyPlayers_Click(object sender, RoutedEventArgs e)
+        {
+            Button source = e.Source as Button;
+            if (source != null)
+            {
+                source.Visibility = Visibility.Hidden;
+            }
+            btn_Shuffle.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }

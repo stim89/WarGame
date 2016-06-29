@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 
 namespace WarCardGame
 {
-    class WarCard
+    public class WarCard
     {
 
         //need to make enum with "suits, cards, owners"
@@ -136,13 +136,6 @@ namespace WarCardGame
 
         #endregion
 
-
-
-        //now need to make 
-        //deck
-        //rand
-        //deal
-        //make a index of each players hands
         //game logic
         //keep score
         //play again?
@@ -153,115 +146,8 @@ namespace WarCardGame
         #region setup
         bool playAgain;
 
-        public struct Stats
-        {
-            public int Player1Wins;
-            public int ComputerWins;
-            public int Player1Loss;
-            public int ComputerLoss;
-            public int TiesWon;
-            public int GamesPlayed;
-        }
 
 
-
-        //my best attept on my own
-
-        public class Deck
-        {
-            private List<WarCard> deck;
-            private int currentCard = 0;
-            private Random rand;
-            
-            public Deck()
-            {
-                deck = new List<WarCard>();
-                currentCard = 0;
-
-                for (int suit = 0; suit <= 3; suit++)
-                {
-                    for (int rank = 2; rank <= 14; rank++)
-                    {
-                        deck.Add(new WarCard((Suits)suit, (Cards)rank));
-                    }
-                }
-            }
-
-            public WarCard this[int i] { get { return deck[i]; } }
-
-            public int Count { get { return deck.Count; } }
-
-            public void Shuffle()
-            {
-                rand = new Random(Guid.NewGuid().GetHashCode());
-
-                var dupedDeck = new List<WarCard>();
-                dupedDeck.AddRange(deck);
-
-                var count = deck.Count;
-                deck = new List<WarCard>();
-                while (deck.Count != count)
-                {
-                    var cardIndex = rand.Next(0, count - deck.Count);
-                    deck.Add(dupedDeck[cardIndex]);
-                    dupedDeck.RemoveAt(cardIndex);
-                }
-            }
-
-            public WarCard DealCard()
-            {
-                if (currentCard < deck.Count)
-                    return deck[currentCard++];
-                else
-                {
-                    return null;
-                }
-            }
-        }
-
-        public class Game
-        {
-            private Deck deck;
-            private int numberOfPlayers;
-
-            private List<WarCard>[] hands;
-
-            public Game(int numberOfPlayers)
-            {
-                this.numberOfPlayers = numberOfPlayers;
-                deck = new Deck();
-                deck.Shuffle();
-                hands = new List<WarCard>[numberOfPlayers];
-
-                var cardsPerPlayer = deck.Count / numberOfPlayers;
-
-                for (int player = 0; player < numberOfPlayers; player++)
-                {
-                    hands[player] = new List<WarCard>();
-                    for (int card = player * cardsPerPlayer; card < (player + 1) * cardsPerPlayer; card++)
-                    {
-                        hands[player].Add(deck[card]);
-                    }
-                }
-
-
-
-            }
-
-            public List<WarCard> GetPlayerHand(int player)
-            {
-                return hands[player];
-            }
-
-
-            //write players remove card and add card list
-
-
-
-        }
-        
-
-        
 
 
 
@@ -283,6 +169,290 @@ namespace WarCardGame
 
 
 
+
+    }
+
+    public struct Stats
+    {
+        public int Player1Wins;
+        public int ComputerWins;
+        public int Player1Loss;
+        public int ComputerLoss;
+        public int TiesWon;
+        public int GamesPlayed;
+    }
+
+
+    public class Deck
+    {
+        private List<WarCard> deck;
+        private int currentCard = 0;
+        private Random rand;
+
+        public Deck()
+        {
+            deck = new List<WarCard>();
+            currentCard = 0;
+
+            for (int suit = 0; suit <= 3; suit++)
+            {
+                for (int rank = 2; rank <= 14; rank++)
+                {
+                    deck.Add(new WarCard((WarCard.Suits)suit, (WarCard.Cards)rank));
+                }
+            }
+        }
+
+        public WarCard this[int i] { get { return deck[i]; } }
+
+        public int Count { get { return deck.Count; } }
+
+        public void Shuffle()
+        {
+            rand = new Random(Guid.NewGuid().GetHashCode());
+
+            var dupedDeck = new List<WarCard>();
+            dupedDeck.AddRange(deck);
+
+            var count = deck.Count;
+            deck = new List<WarCard>();
+            while (deck.Count != count)
+            {
+                var cardIndex = rand.Next(0, count - deck.Count);
+                deck.Add(dupedDeck[cardIndex]);
+                dupedDeck.RemoveAt(cardIndex);
+            }
+        }
+
+        public WarCard DealCard()
+        {
+            if (currentCard < deck.Count)
+                return deck[currentCard++];
+            else
+            {
+                return null;
+            }
+        }
+    }
+
+    public class Game
+    {
+        private Deck deck;
+        public int NumberOfPlayers { get; private set; }
+
+        private List<WarCard>[] hands;
+
+        public Game(int numberOfPlayers)
+        {
+            NumberOfPlayers = numberOfPlayers;
+            deck = new Deck();
+            deck.Shuffle();
+            hands = new List<WarCard>[numberOfPlayers];
+
+            var cardsPerPlayer = deck.Count / numberOfPlayers;
+
+            for (int player = 0; player < numberOfPlayers; player++)
+            {
+                hands[player] = new List<WarCard>();
+                for (int card = player * cardsPerPlayer; card < (player + 1) * cardsPerPlayer; card++)
+                {
+                    hands[player].Add(deck[card]);
+                }
+            }
+
+
+
+        }
+
+        public List<WarCard> GetPlayerHand(int player)
+        {
+            return hands[player];
+        }
+
+
+
+
+
+
+    }
+
+
+
+
+    public class Rules
+    {
+
+
+        public Rules()
+
+        {
+            var cardIndex = 0;
+
+            var firstPlayerCurrentCard = App.WarGame.GetPlayerHand(0)[cardIndex];
+            var secondPlayerCurrentCard = App.WarGame.GetPlayerHand(1)[cardIndex];
+            var thirdPlayerCurrentCard = App.WarGame.GetPlayerHand(2)[cardIndex];
+            var fourthPlayerCurrentCard = App.WarGame.GetPlayerHand(3)[cardIndex];
+
+
+            if (firstPlayerCurrentCard.Card == secondPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == thirdPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == fourthPlayerCurrentCard.Card)
+            {
+                //setup a loop for == 's because it could happen many times in a row, call the next card from each player than check if they == each other again if not the player with the highest card wins
+            }
+            else if (firstPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            {
+                //player 1 wins and keeps all the current cards
+                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            }
+            else if (secondPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            {
+                //player 2 wins and keeps all the current cards
+                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            }
+            else if (thirdPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            {
+                //player 3 wins and keeps all the current cards
+                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            }
+            else
+            {
+                //player 4 wins and keeps all the cards
+                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            }
+        }
+
+
+
+    }
+    //write players remove card and add card list
+    public class Order
+    {
+
+
+        bool playedCard = false;
+
+
+        public Order()
+        {
+
+
+            int playerOrder = 0;
+
+            switch (playerOrder)
+            {
+                case 0:
+                    while ((!playedCard))
+                    {
+                        playerOrder++;
+                        playedCard = true;
+                    }
+                    break;
+                case 1:
+                    while ((!playedCard))
+                    {
+                        playerOrder++;
+                        playedCard = true;
+                    }
+                    break;
+                case 2:
+                    while ((!playedCard))
+                    {
+                        playerOrder++;
+                        playedCard = true;
+                    }
+                    break;
+                case 3:
+                    while ((!playedCard))
+                    {
+                        playerOrder++;
+                        playedCard = true;
+                    }
+                    break;
+                case 4:
+                    playerOrder = 0;
+                    break;
+            }
+            if (playedCard == false)
+            {
+                //call the rules method
+                //maybe not right here but in the rules method... playerCard = true;
+
+            }
+
+
+
+            #region attmept 1 for the players order
+            //for (int playerOrder = 0; playerOrder == 0; playerOrder++)
+            //{
+
+            //logic fo the firstplayer to play
+            //if (playerOrder == 0)
+            //{
+            //  logic for frist player to play card
+            //if(btn_NextCard == enabled)
+            //{
+            //  playerOrder++
+            //}
+
+
+
+            //}
+
+
+            //if (playerOrder == 1)
+            //{
+            //logic for second player to play card
+            //if(btn_NextCard == enabled)
+            //{
+            //  playerOrder++
+            //}
+
+            //}
+            //if (playerOrder == 2)
+            //{
+            //logic for third player to play card
+            //if(btn_NextCard == enabled)
+            // {
+            //   playerOrder++
+            //}
+            //}
+            //(playerOrder == 3)
+            //{
+            //logic for third player to play card
+            //if(btn_NextCard == enabled)
+            //{
+            //  playerOrder++
+            //}
+            //}
+            //if(playerOrder == 4)
+            //{
+            //  logic for third player to play card
+            //if(btn_NextCard == enabled)
+            //{
+            //  playerOrder++
+            //}
+            //}
+            //else
+            //{
+            //  need to reset the order or you excited the amount of players 
+            //  playerOrder = 0;
+            //}
+
+            //}
+
+
+
+
+            //i will use this to indcate which player should go next
+            //int firstPlayer = 0;
+            //int secondPlayer = 1;
+            //int thirdPlayer = 2;
+            //int fourthPlayer = 3;
+            #endregion
+
+
+
+
+        }
 
     }
 }

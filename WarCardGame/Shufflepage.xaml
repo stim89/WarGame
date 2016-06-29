@@ -31,7 +31,19 @@
         <Image x:Name="shuffleCard2" Grid.Column="0" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\Cards\Back.png" Margin="25" Height="160" Width="108"/>
         <Label x:Name="lbl_info" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                Content="Who Will Sit On The Iron Throne?" Foreground="Gold" FontFamily="Old English Text MT" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="btn_Shuffle" Content="Shuffle" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="Shuffle_Click"/>
+        <Button x:Name="btn_Shuffle" Content="Shuffle" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="Shuffle_Click" Visibility="Hidden" />
+        <RadioButton x:Name="rbtn_HowManyPlayers" Content="How Many Players" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers_Click"/>
+
+        <!--<Style TargetType="{x:Type Button}" x:Key="CellTextStyle">
+            <Setter Property="IsEnabled" Value="true" />
+            <Setter Property="IsTabStop" Value="false" />
+            <Style.Triggers>
+                <Trigger Property="Tag" Value="Closed">
+                    <Setter Property = "Visibility" Value="Hidden"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+
 
 
     </Grid>

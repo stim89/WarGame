@@ -13,6 +13,10 @@ namespace WarCardGame
     /// </summary>
     public partial class App : Application
     {
-        //test
+        public static Game WarGame { get; set; }
+
+        public App()
+        {
+        }
     }
 }

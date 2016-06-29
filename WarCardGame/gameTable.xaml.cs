@@ -27,29 +27,33 @@ namespace WarCardGame
 
         private int currentCard = 0;
 
-        private WarCard.Game game;
-
 
         public gameTable()
         {
             InitializeComponent();
-            game = new WarCard.Game(4);
         }
 
-        private void btn_newGame_Click(object sender, RoutedEventArgs e)
+        private void btn_NextCard_Click(object sender, RoutedEventArgs e)
         {
-            Test1.Source = game.GetPlayerHand(0)[currentCard].CardImage;
-            Test2.Source = game.GetPlayerHand(1)[currentCard].CardImage;
-            Test3.Source = game.GetPlayerHand(2)[currentCard].CardImage;
-            Test4.Source = game.GetPlayerHand(3)[currentCard].CardImage;
+
+            Test1.Source = App.WarGame.GetPlayerHand(0)[currentCard].CardImage;
+            Test2.Source = App.WarGame.GetPlayerHand(1)[currentCard].CardImage;
+            Test3.Source = App.WarGame.GetPlayerHand(2)[currentCard].CardImage;
+            Test4.Source = App.WarGame.GetPlayerHand(3)[currentCard].CardImage;
+
+            //var p1h = App.WarGame.GetPlayerHand(0);
+           // var card = p1h[currentCard];
+
+            var rules1 = new Rules();
+            
 
 
             // u will have to get rid of this later
-            currentCard++;
+            //currentCard++;
 
             // Reset deck if index is above # of cards per player
-            if (currentCard >= 52 / 4)
-                game = new WarCard.Game(4);
+            //if (currentCard >= 52 / 4)
+            //game = new WarCard.Game(4);
 
 
             //var card = new WarCard(WarCard.Suits.Diamond, WarCard.Cards.C10);

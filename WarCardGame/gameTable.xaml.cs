@@ -36,16 +36,21 @@ namespace WarCardGame
         private void btn_NextCard_Click(object sender, RoutedEventArgs e)
         {
 
+            //need to setup loop to each time the button pushed a new card will show
+
+
+
             Test1.Source = App.WarGame.GetPlayerHand(0)[currentCard].CardImage;
             Test2.Source = App.WarGame.GetPlayerHand(1)[currentCard].CardImage;
             Test3.Source = App.WarGame.GetPlayerHand(2)[currentCard].CardImage;
             Test4.Source = App.WarGame.GetPlayerHand(3)[currentCard].CardImage;
+            currentCard++;
+
 
             //var p1h = App.WarGame.GetPlayerHand(0);
-           // var card = p1h[currentCard];
+            // var card = p1h[currentCard];
 
             var rules1 = new Rules();
-            
 
 
             // u will have to get rid of this later
@@ -58,6 +63,8 @@ namespace WarCardGame
 
             //var card = new WarCard(WarCard.Suits.Diamond, WarCard.Cards.C10);
             //TestImage.Source = card.CardImage;
+            
+
         }
     }
 }

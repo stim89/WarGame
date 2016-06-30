@@ -12,8 +12,7 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="25"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="-50,25,25,25"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="25"/>
-                <!--<EasingThicknessKeyFrame KeyTime="0:0:1.5" Value="-50,25,25,25"/>
-                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="25"/>-->
+                
             </ThicknessAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -22,6 +21,9 @@
 
     </Window.Background>
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="boolConverter" />
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
@@ -32,9 +34,25 @@
         <Label x:Name="lbl_info" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                Content="Who Will Sit On The Iron Throne?" Foreground="Gold" FontFamily="Old English Text MT" FontSize="30" FontWeight="Bold"/>
         <Button x:Name="btn_Shuffle" Content="Shuffle" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="Shuffle_Click" Visibility="Hidden" />
-        <RadioButton x:Name="rbtn_HowManyPlayers" Content="How Many Players" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers_Click"/>
+        <StackPanel x:Name="s_radio"  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+            <Label x:Name="lbl_radioButton" Grid.Column="2"  Content="How Many Players" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold"  Width="150" Height="50"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gold"/>
+            <RadioButton x:Name="rbtn_HowManyPlayers" Content="1" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers_Click" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Background="Black" Foreground="Gold" BorderBrush="Red" 
+                        Visibility="Visible" />
+            <RadioButton x:Name="rbtn_HowManyPlayers2" Content="2" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers2_Click" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Background="Black" Foreground="Gold" BorderBrush="Red" 
+                         Visibility="Visible"/>
+            <RadioButton x:Name="rbtn_HowManyPlayers3" Content="3" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers3_Click" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Background="Black" Foreground="Gold" BorderBrush="Red"
+                         Visibility="Visible"/>
+            <RadioButton x:Name="rbtn_HowManyPlayers4" Content="4" FontFamily="Old English Text MT" FontSize="18" FontWeight="Bold" Grid.Column="2" Width="150" Height="50"  Click="rbtn_HowManyPlayers4_Click" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Background="Black" Foreground="Gold" BorderBrush="Red" 
+                         Visibility="Visible"/>
+        </StackPanel>
+        
 
-        <!--<Style TargetType="{x:Type Button}" x:Key="CellTextStyle">
+
+            <!--<Style TargetType="{x:Type Button}" x:Key="CellTextStyle">
             <Setter Property="IsEnabled" Value="true" />
             <Setter Property="IsTabStop" Value="false" />
             <Style.Triggers>

@@ -52,8 +52,7 @@ namespace WarCardGame
 
         private void Shuffle_Click(object sender, RoutedEventArgs e)
         {
-            // arbitrary number - pull number of players input here
-            App.WarGame = new Game(4);
+            
 
             
             var storyboard = (Storyboard)TryFindResource("ShuffleStoryboard");
@@ -72,14 +71,60 @@ namespace WarCardGame
             this.Close();
         }
 
+
+        
+
         private void rbtn_HowManyPlayers_Click(object sender, RoutedEventArgs e)
         {
-            Button source = e.Source as Button;
-            if (source != null)
-            {
-                source.Visibility = Visibility.Hidden;
-            }
+            // pull number of players input here
+            //lol have to figure out why only 4 works
+            App.WarGame = new Game(2);
+
             btn_Shuffle.Visibility = System.Windows.Visibility.Visible;
+            rbtn_HowManyPlayers.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers2.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers3.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers4.Visibility = System.Windows.Visibility.Hidden;
+            lbl_radioButton.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void rbtn_HowManyPlayers2_Click(object sender, RoutedEventArgs e)
+        {
+            // pull number of players input here
+            App.WarGame = new Game(2);
+
+            btn_Shuffle.Visibility = System.Windows.Visibility.Visible;
+            rbtn_HowManyPlayers.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers2.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers3.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers4.Visibility = System.Windows.Visibility.Hidden;
+            lbl_radioButton.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void rbtn_HowManyPlayers3_Click(object sender, RoutedEventArgs e)
+        {
+            // pull number of players input here
+            App.WarGame = new Game(3);
+
+            btn_Shuffle.Visibility = System.Windows.Visibility.Visible;
+            rbtn_HowManyPlayers.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers2.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers3.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers4.Visibility = System.Windows.Visibility.Hidden;
+            lbl_radioButton.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void rbtn_HowManyPlayers4_Click(object sender, RoutedEventArgs e)
+        {
+            // pull number of players input here
+            App.WarGame = new Game(4);
+
+            btn_Shuffle.Visibility = System.Windows.Visibility.Visible;
+            rbtn_HowManyPlayers.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers2.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers3.Visibility = System.Windows.Visibility.Hidden;
+            rbtn_HowManyPlayers4.Visibility = System.Windows.Visibility.Hidden;
+            lbl_radioButton.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }

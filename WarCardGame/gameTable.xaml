@@ -21,7 +21,8 @@
         <Label x:Name="lbl_YourCardCount" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,100"
                Content="How Many Cards Left" Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold"/>
         <Label x:Name="lbl_DisplayyourScore" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50"
-              Content="djdjdj"   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
+               Content="{Binding Path=WarCard.count()}"   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
+                <!-- above is a temp to display the index of a player-->
         <Button x:Name="btn_nextCard" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Height="50" 
                 Content="Next Card" Style="{DynamicResource ResourceKey=WarMenuButton}" Click="btn_NextCard_Click" Margin="0,0,0,50"/>
 
@@ -42,7 +43,7 @@
         <Label x:Name="lbl_ComputerCardCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,0,0,0"
                Content="How Many Cards Left" Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold"/>
         <Label x:Name="lbl_DisplayComputerScore" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,50,0,0"
-              Content="djdjdj"   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
+              Content=""   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
 
     </Grid>
 

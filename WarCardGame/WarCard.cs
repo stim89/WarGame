@@ -11,6 +11,10 @@ namespace WarCardGame
     public class WarCard
     {
 
+        public static readonly WarCard Blank = new WarCard(Suits.None, Cards.Blank);
+
+        public static readonly WarCard Down = new WarCard(Suits.None, Cards.Down);
+
         //need to make enum with "suits, cards, owners"
         //need to make a contents for the path ways to my images
         //need to make bool to see if the card is playable
@@ -240,142 +244,128 @@ namespace WarCardGame
         private Deck deck;
         public int NumberOfPlayers { get; private set; }
 
-        private List<WarCard>[] hands;
+        public List<WarCard>[] Hands { get; private set; }
 
         public Game(int numberOfPlayers)
         {
             NumberOfPlayers = numberOfPlayers;
             deck = new Deck();
             deck.Shuffle();
-            hands = new List<WarCard>[numberOfPlayers];
+            Hands = new List<WarCard>[numberOfPlayers];
 
             var cardsPerPlayer = deck.Count / numberOfPlayers;
 
             for (int player = 0; player < numberOfPlayers; player++)
             {
-                hands[player] = new List<WarCard>();
+                Hands[player] = new List<WarCard>();
                 for (int card = player * cardsPerPlayer; card < (player + 1) * cardsPerPlayer; card++)
                 {
-                    hands[player].Add(deck[card]);
+                    Hands[player].Add(deck[card]);
                 }
             }
-
-
-
         }
-
-
-
-        public List<WarCard> GetPlayerHand(int player)
-        {
-            return hands[player];
-        }
-
-
-
-
-
     }
 
 
 
     public class Rules
     {
-        public List<WarCard> winnerCards { get; set; }
-        public List<WarCard> loseCard { get; set; }
-
-        public Rules()
-
+        public static int GetWinner(List<List<WarCard>> hands, List<int> players)
         {
-            //make new lists to add them with the players hand
-            winnerCards = new List<WarCard>();
-            loseCard = new List<WarCard>();
-
-
             var cardIndex = 0;
-            
-            var firstPlayerCurrentCard = App.WarGame.GetPlayerHand(0)[cardIndex];
-            var secondPlayerCurrentCard = App.WarGame.GetPlayerHand(1)[cardIndex];
-            var thirdPlayerCurrentCard = App.WarGame.GetPlayerHand(2)[cardIndex];
-            var fourthPlayerCurrentCard = App.WarGame.GetPlayerHand(3)[cardIndex];
 
+            var max = hands.Max(h => h[0].Card);
+            var first = hands.First(h => h[0].Card == max);
+            var last = hands.Last(h => h[0].Card == max);
 
-            if (firstPlayerCurrentCard.Card == secondPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == thirdPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == fourthPlayerCurrentCard.Card)
+            if (first == last)
             {
-                //setup a loop for == 's because it could happen many times in a row, call the next card from each player than check if they == each other again if not the player with the highest card wins
+                // there is only one winner!!!!!!!!!!!!!!!!!!!!!!!!
             }
-            else if (firstPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
-            {
-                //player 1 wins and keeps all the current cards
-                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
-                //App.WarGame.GetPlayerHand.firstPlayerCurrentCard.add(secondPlayerCurrentCard);
 
-                //temp to add to the cards to the winner from other players cards
-                winnerCards.Add(secondPlayerCurrentCard);
-                winnerCards.Add(thirdPlayerCurrentCard);
-                winnerCards.Add(fourthPlayerCurrentCard);
-
-                //temp to remove the card from the players list
-                loseCard.Remove(secondPlayerCurrentCard);
-                loseCard.Remove(thirdPlayerCurrentCard);
-                loseCard.Remove(fourthPlayerCurrentCard);
-
-                //i guess it is a temp to make sure the new cards where added to the list
-                winnerCards = new List<WarCard>();
-                loseCard = new List<WarCard>();
-
-                //after this need to make the card go face down and re loop the next card button
+            //var firstPlayerCurrentCard = App.WarGame.Hands[0][cardIndex];
+            //var secondPlayerCurrentCard = App.WarGame.Hands[1][cardIndex];
+            //var thirdPlayerCurrentCard = App.WarGame.Hands[2][cardIndex];
+            //var fourthPlayerCurrentCard = App.WarGame.Hands[3][cardIndex];
 
 
-            }
-            else if (secondPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
-            {
-                //player 2 wins and keeps all the current cards
-                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            //if (firstPlayerCurrentCard.Card == secondPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == thirdPlayerCurrentCard.Card || firstPlayerCurrentCard.Card == fourthPlayerCurrentCard.Card)
+            //{
+            //    //setup a loop for == 's because it could happen many times in a row, call the next card from each player than check if they == each other again if not the player with the highest card wins
+            //}
+            //else if (firstPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && firstPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            //{
+            //    //player 1 wins and keeps all the current cards
+            //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            //    //App.WarGame.GetPlayerHand.firstPlayerCurrentCard.add(secondPlayerCurrentCard);
 
-                winnerCards.Add(firstPlayerCurrentCard);
-                winnerCards.Add(thirdPlayerCurrentCard);
-                winnerCards.Add(fourthPlayerCurrentCard);
+            //    //temp to remove the card from the players list
+            //    App.WarGame.Hands[0].Remove(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[1].Remove(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[2].Remove(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[3].Remove(fourthPlayerCurrentCard);
 
-                loseCard.Remove(firstPlayerCurrentCard);
-                loseCard.Remove(thirdPlayerCurrentCard);
-                loseCard.Remove(fourthPlayerCurrentCard);
+            //    //temp to add to the cards to the winner from other players cards
+            //    App.WarGame.Hands[0].Add(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(fourthPlayerCurrentCard);
 
-                winnerCards = new List<WarCard>();
-                loseCard = new List<WarCard>();
-            }
-            else if (thirdPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
-            {
-                //player 3 wins and keeps all the current cards
-                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            //    //after this need to make the card go face down and re loop the next card button
 
-                winnerCards.Add(secondPlayerCurrentCard);
-                winnerCards.Add(firstPlayerCurrentCard);
-                winnerCards.Add(fourthPlayerCurrentCard);
 
-                loseCard.Remove(secondPlayerCurrentCard);
-                loseCard.Remove(firstPlayerCurrentCard);
-                loseCard.Remove(fourthPlayerCurrentCard);
+            //}
+            //else if (secondPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > thirdPlayerCurrentCard.Card && secondPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            //{
+            //    //player 2 wins and keeps all the current cards
+            //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
 
-                winnerCards = new List<WarCard>();
-                loseCard = new List<WarCard>();
-            }
-            else
-            {
-                //player 4 wins and keeps all the cards
-                //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
-                winnerCards.Add(secondPlayerCurrentCard);
-                winnerCards.Add(thirdPlayerCurrentCard);
-                winnerCards.Add(firstPlayerCurrentCard);
+            //    winnerCards.Add(firstPlayerCurrentCard);
+            //    winnerCards.Add(thirdPlayerCurrentCard);
+            //    winnerCards.Add(fourthPlayerCurrentCard);
 
-                loseCard.Remove(secondPlayerCurrentCard);
-                loseCard.Remove(thirdPlayerCurrentCard);
-                loseCard.Remove(firstPlayerCurrentCard);
+            //    loseCard.Remove(firstPlayerCurrentCard);
+            //    loseCard.Remove(thirdPlayerCurrentCard);
+            //    loseCard.Remove(fourthPlayerCurrentCard);
 
-                winnerCards = new List<WarCard>();
-                loseCard = new List<WarCard>();
+            //    winnerCards = new List<WarCard>();
+            //    loseCard = new List<WarCard>();
+            //}
+            //else if (thirdPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
+            //{
+            //    //player 3 wins and keeps all the current cards
+            //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
 
-            }
+            //    winnerCards.Add(secondPlayerCurrentCard);
+            //    winnerCards.Add(firstPlayerCurrentCard);
+            //    winnerCards.Add(fourthPlayerCurrentCard);
+
+            //    loseCard.Remove(secondPlayerCurrentCard);
+            //    loseCard.Remove(firstPlayerCurrentCard);
+            //    loseCard.Remove(fourthPlayerCurrentCard);
+
+            //    winnerCards = new List<WarCard>();
+            //    loseCard = new List<WarCard>();
+            //}
+            //else
+            //{
+            //    //player 4 wins and keeps all the cards
+            //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
+            //    winnerCards.Add(secondPlayerCurrentCard);
+            //    winnerCards.Add(thirdPlayerCurrentCard);
+            //    winnerCards.Add(firstPlayerCurrentCard);
+
+            //    loseCard.Remove(secondPlayerCurrentCard);
+            //    loseCard.Remove(thirdPlayerCurrentCard);
+            //    loseCard.Remove(firstPlayerCurrentCard);
+
+            //    winnerCards = new List<WarCard>();
+            //    loseCard = new List<WarCard>();
+
+            //}
+
+
+            return -1;
         }
 
 

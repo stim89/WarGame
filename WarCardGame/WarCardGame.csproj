@@ -138,7 +138,7 @@
     <Resource Include="Images\Cards\14Spade.png" />
     <Resource Include="Images\Cards\15Joker.png" />
     <Resource Include="Images\Cards\16Joker.png" />
-    <Resource Include="Images\Cards\Back.png" />
+    <Resource Include="Images\Cards\Down.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\TableItems\gameBackGround.png" />
@@ -183,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\TableItems\Blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\Blank.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

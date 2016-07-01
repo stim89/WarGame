@@ -37,20 +37,109 @@ namespace WarCardGame
         {
 
             //need to setup loop to each time the button pushed a new card will show
+            var hands = new List<List<WarCard>>();
+            var players = new List<int>();
 
+            switch (App.WarGame.NumberOfPlayers)
+            {
+                case 2:
+                    if (App.WarGame.Hands[0].Count > 0)
+                    {
+                        Test1.Source = App.WarGame.Hands[0][currentCard].CardImage;
+                        players.Add(0);
+                    }
+                    else
+                    {
+                        Test1.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[1].Count > 0)
+                    {
+                        Test2.Source = App.WarGame.Hands[1][currentCard].CardImage;
+                        players.Add(1);
+                    }
+                    else
+                    {
+                        Test2.Source = WarCard.Blank.CardImage;
+                    }                    
 
+                    break;
+                case 3:
+                    if (App.WarGame.Hands[0].Count > 0)
+                    {
+                        Test1.Source = App.WarGame.Hands[0][currentCard].CardImage;
+                        players.Add(0);
+                    }
+                    else
+                    {
+                        Test1.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[1].Count > 0)
+                    {
+                        Test2.Source = App.WarGame.Hands[1][currentCard].CardImage;
+                        players.Add(1);
+                    }
+                    else
+                    {
+                        Test2.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[2].Count > 0)
+                    {
+                        Test3.Source = App.WarGame.Hands[2][currentCard].CardImage;
+                        players.Add(2);
+                    }
+                    else
+                    {
+                        Test3.Source = WarCard.Blank.CardImage;
+                    }
 
-            Test1.Source = App.WarGame.GetPlayerHand(0)[currentCard].CardImage;
-            Test2.Source = App.WarGame.GetPlayerHand(1)[currentCard].CardImage;
-            Test3.Source = App.WarGame.GetPlayerHand(2)[currentCard].CardImage;
-            Test4.Source = App.WarGame.GetPlayerHand(3)[currentCard].CardImage;
+                    break;
+                case 4:
+                    if (App.WarGame.Hands[0].Count > 0)
+                    {
+                        Test1.Source = App.WarGame.Hands[0][currentCard].CardImage;
+                        players.Add(0);
+                    }
+                    else
+                    {
+                        Test1.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[1].Count > 0)
+                    {
+                        Test2.Source = App.WarGame.Hands[1][currentCard].CardImage;
+                        players.Add(1);
+                    }
+                    else
+                    {
+                        Test2.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[2].Count > 0)
+                    {
+                        Test3.Source = App.WarGame.Hands[2][currentCard].CardImage;
+                        players.Add(2);
+                    }
+                    else
+                    {
+                        Test3.Source = WarCard.Blank.CardImage;
+                    }
+                    if (App.WarGame.Hands[3].Count > 0)
+                    {
+                        Test4.Source = App.WarGame.Hands[3][currentCard].CardImage;
+                        players.Add(3);
+                    }
+                    else
+                    {
+                        Test4.Source = WarCard.Blank.CardImage;
+                    }
+
+                    break;
+            }
+
+            foreach (var playerIndex in players)
+                hands.Add(App.WarGame.Hands[playerIndex]);
+
             currentCard++;
-
-
-            //var p1h = App.WarGame.GetPlayerHand(0);
-            // var card = p1h[currentCard];
-
-            var rules1 = new Rules();
+            
+            var winner = Rules.GetWinner(hands, players);
 
 
             // u will have to get rid of this later
@@ -63,7 +152,7 @@ namespace WarCardGame
 
             //var card = new WarCard(WarCard.Suits.Diamond, WarCard.Cards.C10);
             //TestImage.Source = card.CardImage;
-            
+
 
         }
     }

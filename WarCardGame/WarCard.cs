@@ -320,47 +320,54 @@ namespace WarCardGame
             //    //player 2 wins and keeps all the current cards
             //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
 
-            //    winnerCards.Add(firstPlayerCurrentCard);
-            //    winnerCards.Add(thirdPlayerCurrentCard);
-            //    winnerCards.Add(fourthPlayerCurrentCard);
+            //    //temp to remove the card from the players list
+            //    App.WarGame.Hands[0].Remove(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[1].Remove(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[2].Remove(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[3].Remove(fourthPlayerCurrentCard);
 
-            //    loseCard.Remove(firstPlayerCurrentCard);
-            //    loseCard.Remove(thirdPlayerCurrentCard);
-            //    loseCard.Remove(fourthPlayerCurrentCard);
+            //    //temp to add to the cards to the winner from other players cards
+            //    App.WarGame.Hands[0].Add(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(fourthPlayerCurrentCard);
 
-            //    winnerCards = new List<WarCard>();
-            //    loseCard = new List<WarCard>();
+
             //}
             //else if (thirdPlayerCurrentCard.Card > firstPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > secondPlayerCurrentCard.Card && thirdPlayerCurrentCard.Card > fourthPlayerCurrentCard.Card)
             //{
             //    //player 3 wins and keeps all the current cards
             //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
 
-            //    winnerCards.Add(secondPlayerCurrentCard);
-            //    winnerCards.Add(firstPlayerCurrentCard);
-            //    winnerCards.Add(fourthPlayerCurrentCard);
+            //    //temp to remove the card from the players list
+            //    App.WarGame.Hands[0].Remove(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[1].Remove(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[2].Remove(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[3].Remove(fourthPlayerCurrentCard);
 
-            //    loseCard.Remove(secondPlayerCurrentCard);
-            //    loseCard.Remove(firstPlayerCurrentCard);
-            //    loseCard.Remove(fourthPlayerCurrentCard);
+            //    //temp to add to the cards to the winner from other players cards
+            //    App.WarGame.Hands[0].Add(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(fourthPlayerCurrentCard);
 
-            //    winnerCards = new List<WarCard>();
-            //    loseCard = new List<WarCard>();
+
             //}
             //else
             //{
             //    //player 4 wins and keeps all the cards
             //    //so return put the won cards in player 1 list...like hands[player].Add(deck[card]);
-            //    winnerCards.Add(secondPlayerCurrentCard);
-            //    winnerCards.Add(thirdPlayerCurrentCard);
-            //    winnerCards.Add(firstPlayerCurrentCard);
+            //    //temp to remove the card from the players list
+            //    App.WarGame.Hands[0].Remove(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[1].Remove(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[2].Remove(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[3].Remove(fourthPlayerCurrentCard);
 
-            //    loseCard.Remove(secondPlayerCurrentCard);
-            //    loseCard.Remove(thirdPlayerCurrentCard);
-            //    loseCard.Remove(firstPlayerCurrentCard);
-
-            //    winnerCards = new List<WarCard>();
-            //    loseCard = new List<WarCard>();
+            //    //temp to add to the cards to the winner from other players cards
+            //    App.WarGame.Hands[0].Add(firstPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(secondPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(thirdPlayerCurrentCard);
+            //    App.WarGame.Hands[0].Add(fourthPlayerCurrentCard);
 
             //}
 

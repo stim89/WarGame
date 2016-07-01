@@ -40,11 +40,27 @@
             <Image x:Name="Test2" Source="C:\Users\bodels\Source\Repos\WarGame\WarCardGame\Images\TableItems\Blank.png" Width="100" Height="100"></Image>
         </StackPanel>
 
-        <Label x:Name="lbl_ComputerCardCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,0,0,0"
+        <Label x:Name="lbl_ScondPlayerCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,0,0,0"
                Content="How Many Cards Left" Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold"/>
-        <Label x:Name="lbl_DisplayComputerScore" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,50,0,0"
+        <Label x:Name="lbl_DisplayScondPlayerScore" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0,50,0,0"
               Content=""   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
 
+        <Label x:Name="lbl_ThridPlayerCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,350"
+               Content="How Many Cards Left" Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold"/>
+        <Label x:Name="lbl_DisplayThirdPlayerScore" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,300"
+              Content=""   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
+
+        <Label x:Name="lbl_FourthPlayerCount" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,150"
+               Content="How Many Cards Left" Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold"/>
+        <Label x:Name="lbl_DisplayFourthPlayerScore" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,100"
+              Content=""   Foreground="Gold" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" />
+
+        <Label x:Name="lbl_Winner" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"
+              Content="Winner"   Foreground="Green" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" 
+               Visibility="Hidden"/>
+        <Label x:Name="lbl_Losser" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"
+              Content="Losser"   Foreground="Red" FontFamily="Old English Text MT" FontSize="25" FontWeight="Bold" 
+               Visibility="Hidden"/>
     </Grid>
 
 </Window>

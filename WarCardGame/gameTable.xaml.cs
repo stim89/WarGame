@@ -142,6 +142,10 @@ namespace WarCardGame
             var winner = Rules.GetWinner(hands, players);
 
 
+
+            //btn_Winner.Visibility = System.Windows.Visibility.Visible;
+            //btn_Losser.Visibility = System.Windows.Visibility.Visible;
+
             // u will have to get rid of this later
             //currentCard++;
 
@@ -155,5 +159,11 @@ namespace WarCardGame
 
 
         }
+
+
+
+        
+            
+        
     }
 }
